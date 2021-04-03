@@ -1,4 +1,4 @@
-import { initializeApp, analytics, firestore } from 'firebase'
+import { analytics, auth, firestore, initializeApp } from 'firebase'
 
 export const firebase = initializeApp({
   apiKey: "AIzaSyABdBUfwLvQgk0JkuqI7_smbfVQnukxlcM",
@@ -11,4 +11,5 @@ export const firebase = initializeApp({
 })
 
 export const analytics = analytics()
+export const auth = auth()
 export const firestore = firestore()
