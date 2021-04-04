@@ -1,19 +1,18 @@
 <template>
   <div class="authorization">
-    Authorization!
-    <h1>Sign In</h1>
-    <p>Don't have an account yet? Sign Up</p>
+    <SignIn v-if="true" />
+    <SignUp v-else />
   </div>
 </template>
 
 <script>
+import SignIn from './components/SignIn.vue'
+import SignUp from './components/SignUp.vue'
+
 export default {
-  mounted() {
-    console.log("mounted")
-    //this.$store.dispatch('auth/signIn', {
-    //  email: 'ryan@ryanwirth.ca',
-    //  password: 'loremipsum'
-    //})
+  components: {
+    SignIn,
+    SignUp
   }
 }
 </script>
