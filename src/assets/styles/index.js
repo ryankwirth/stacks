@@ -1,2 +1,1 @@
-import './fonts.sass'
-import './global.sass'
+import './index.sass'
