@@ -3,14 +3,39 @@
 </template>
 
 <style>
-html, body {
+@font-face {
+  font-family: "SF Pro";
+  font-weight: normal;
+  src: url("assets/fonts/sf-pro-text-regular.woff") format("woff"),
+    url("assets/fonts/sf-pro-text-regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "SF Pro";
+  font-weight: 600;
+  src: url("assets/fonts/sf-pro-text-semibold.woff") format("woff"),
+    url("assets/fonts/sf-pro-text-semibold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "SF Pro";
+  font-weight: 900;
+  src: url("assets/fonts/sf-pro-text-heavy.woff") format("woff"),
+    url("assets/fonts/sf-pro-text-heavy.ttf") format("truetype");
+}
+
+html,
+body {
   margin: 0;
+  width: 100%;
+  height: 100%;
 }
 
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "SF Pro", Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
 }
 
 .global__color--primary {
