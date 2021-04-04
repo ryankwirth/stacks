@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import { store } from '@/store'
 
 import { Authorized } from '@/common/layouts'
 
@@ -39,8 +40,25 @@ export const router = createRouter({
           name: 'Strategies',
           component: Strategies
         }
-      ]
+      ],
+      meta: {
+        requiresAuth: true
+      }
     }
   ],
   history: createWebHistory()
+})
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    const isAuthorized = store.getters['auth/isAuthorized']
+
+    if (!isAuthorized) {
+      next({ name: 'Authorization' })
+    } else {
+      next()
+    }
+  } else {
+    next()
+  }
 })
