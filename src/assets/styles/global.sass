@@ -1,0 +1,12 @@
+@mixin color($name, $color)
+  .global__color--#{$name}
+    color: $color
+
+  .global__background--#{$name}
+    background: $color
+
+@include color("primary", #131416)
+@include color("secondary", #e6eaf6)
+@include color("success", #16cf7c)
+@include color("warning", #e5a140)
+@include color("danger", #ee5959)
