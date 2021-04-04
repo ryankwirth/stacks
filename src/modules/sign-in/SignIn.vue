@@ -15,25 +15,32 @@
         />
       </div>
       <div class="sign-in__field">
-        <button @click.prevent="signIn()">Sign In</button>
+        <button @click.prevent="validate()">Sign In</button>
       </div>
     </form>
   </div>
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   data() {
     return {
       email: null,
       password: null,
-      validationErrors: [],
     };
   },
   methods: {
-    signIn() {
-      console.log("sign in", this.email, this.password);
+    validate() {
+      // TODO: Perform input validation
+
+      this.signIn({
+        email: this.email,
+        password: this.password,
+      });
     },
+    ...mapActions("auth", ["signIn"]),
   },
 };
 </script>
