@@ -1,6 +1,6 @@
 <template>
   <div class="sign-in">
-    <h1>Sign in to Stacks</h1>
+    <h1>Sign In</h1>
     <form>
       <div class="sign-in__field">
         <label>Email address</label>

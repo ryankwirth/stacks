@@ -13,7 +13,14 @@ export const actions = {
       })
   },
   signUp({ commit }, payload) {
-    console.log(commit)
-    console.log(payload)
+    return Firebase
+      .auth
+      .createUserWithEmailAndPassword(payload.email, payload.password)
+      .then(response => {
+        commit('setUser', response.user)
+      })
+      .catch(error => {
+        commit('setError', error.message)
+      })
   }
 }
