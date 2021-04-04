@@ -1,6 +1,9 @@
-import { analytics, auth, firestore, initializeApp } from 'firebase'
+import Firebase from 'firebase/app'
+import 'firebase/auth'
+import 'firebase/analytics'
+import 'firebase/firestore'
 
-export const firebase = initializeApp({
+export const app = Firebase.initializeApp({
   apiKey: "AIzaSyABdBUfwLvQgk0JkuqI7_smbfVQnukxlcM",
   authDomain: "stacks-5e258.firebaseapp.com",
   projectId: "stacks-5e258",
@@ -10,6 +13,6 @@ export const firebase = initializeApp({
   measurementId: "G-X5LLTM257W"
 })
 
-export const analytics = analytics()
-export const auth = auth()
-export const firestore = firestore()
+export const auth = Firebase.auth()
+export const analytics = Firebase.analytics()
+export const firestore = Firebase.firestore()
