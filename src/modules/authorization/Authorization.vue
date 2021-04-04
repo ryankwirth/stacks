@@ -1,5 +1,9 @@
 <template>
-  <div>Authorization!</div>
+  <div class="authorization">
+    Authorization!
+    <h1>Sign In</h1>
+    <p>Don't have an account yet? Sign Up</p>
+  </div>
 </template>
 
 <script>
