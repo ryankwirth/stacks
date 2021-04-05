@@ -24,6 +24,7 @@ export const router = createRouter({
     },
     {
       path: '/',
+      redirect: '/dashboard',
       component: Authorized,
       children: [
         {
@@ -56,14 +57,11 @@ export const router = createRouter({
 })
 
 router.beforeEach((to, from, next) => {
-  if (to.matched.some(record => record.meta.requiresAuth)) {
-    const isAuthorized = store.getters['auth/isAuthorized']
+  const isAuthorized = store.getters['auth/isAuthorized']
+  const requiresAuth = to.matched.some(record => record.meta.requiresAuth)
 
-    if (!isAuthorized) {
-      next({ name: 'Sign In' })
-    } else {
-      next()
-    }
+  if (isAuthorized != requiresAuth) {
+    next({ name: requiresAuth ? 'Sign In' : 'Dashboard' })
   } else {
     next()
   }
