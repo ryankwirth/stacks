@@ -1,9 +1,9 @@
 @mixin font-face($type, $weight)
   @font-face
-    font-family: "SF Pro"
+    font-family: "Roboto"
     font-weight: $weight
-    src: url("../fonts/sf-pro-#{$type}.woff") format("woff"), url("../fonts/sf-pro-#{$type}.ttf") format("truetype")
+    src: url("../fonts/roboto-#{$type}.woff2") format("woff2"), url("../fonts/roboto-#{$type}.woff") format("woff"), url("../fonts/roboto-#{$type}.ttf") format("truetype")
 
 @include font-face("regular", normal)
-@include font-face("semibold", 600)
-@include font-face("heavy", 900)
+@include font-face("medium", 500)
+@include font-face("bold", bold)
