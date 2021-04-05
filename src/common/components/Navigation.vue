@@ -2,8 +2,10 @@
   <nav class="navigation">
     <div class="navigation__logo">Stacks</div>
 
+    <div class="navigation__divider global__background--secondary" />
+
     <ul class="navigation__links">
-      <li class="navigation__link">
+      <li class="navigation__link navigation__link--active">
         <router-link to="/dashboard">Dashboard</router-link>
       </li>
       <li class="navigation__link">
@@ -19,13 +21,21 @@
   </nav>
 </template>
 
-<style>
+<style lang="scss">
 .navigation {
   display: flex;
+  align-items: center;
 }
 
 .navigation__logo {
-  font-weight: 900;
+  font-weight: bold;
+  padding-right: 16px;
+}
+
+.navigation__divider {
+  width: 1px;
+  height: 12px;
+  margin: 0 40px;
 }
 
 .navigation__links {
@@ -38,6 +48,25 @@
 }
 
 .navigation__link {
-  font-weight: 600;
+  color: #82828d;
+  font-weight: 500;
+  font-size: 15.5px;
+  letter-spacing: 0.25px;
+
+  a {
+    padding: 16px;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.navigation__link--active {
+  color: #fff;
+  font-weight: bold;
+
+  text-underline-offset: 6px;
+  text-decoration: underline #fff 2px;
 }
 </style>
