@@ -15,14 +15,14 @@
         />
       </div>
       <div class="sign-in__field">
-        <button @click.prevent="validate()">Sign In</button>
+        <button @click.prevent="validate()">Sign In {{ isAuthorized }}</button>
       </div>
     </form>
   </div>
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 
 export default {
   data() {
@@ -31,14 +31,18 @@ export default {
       password: null,
     };
   },
+  computed: {
+    ...mapGetters("auth", ["isAuthorized"]),
+  },
+  watch: {
+    isAuthorized() {
+      this.$router.push({ name: "Dashboard" });
+    },
+  },
   methods: {
     validate() {
       // TODO: Perform input validation
-
-      this.signIn({
-        email: this.email,
-        password: this.password,
-      });
+      this.signIn({ email: this.email, password: this.password });
     },
     ...mapActions("auth", ["signIn"]),
   },
