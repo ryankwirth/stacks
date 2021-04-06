@@ -2,6 +2,7 @@ html, body
   margin: 0
   width: 100%
   height: 100%
+  box-sizing: border-box
 
   color: $color-secondary
   background: $color-primary
@@ -9,6 +10,9 @@ html, body
   font-family: "Roboto", Avenir, Helvetica, Arial, sans-serif
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
+
+*, *:before, *:after
+  box-sizing: inherit
 
 a
   color: inherit

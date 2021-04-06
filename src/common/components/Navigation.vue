@@ -5,7 +5,7 @@
     <div class="navigation__divider global__background--secondary" />
 
     <ul class="navigation__links">
-      <li class="navigation__link navigation__link--active">
+      <li class="navigation__link">
         <router-link to="/dashboard">Dashboard</router-link>
       </li>
       <li class="navigation__link">
@@ -25,6 +25,7 @@
 .navigation {
   display: flex;
   align-items: center;
+  height: 80px;
 }
 
 .navigation__logo {
@@ -59,14 +60,14 @@
     &:hover {
       color: #fff;
     }
+
+    &.router-link-active {
+      color: #fff;
+      font-weight: bold;
+
+      text-underline-offset: 6px;
+      text-decoration: underline #fff 2px;
+    }
   }
-}
-
-.navigation__link--active {
-  color: #fff;
-  font-weight: bold;
-
-  text-underline-offset: 6px;
-  text-decoration: underline #fff 2px;
 }
 </style>
