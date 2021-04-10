@@ -10,7 +10,7 @@ import GrowthChart from "./components/GrowthChart.vue";
 
 const labels = [...Array(365).keys()];
 const lineData = labels.map((value) => Math.random() * value);
-const barData = labels.map(() => Math.random() * 5);
+const barData = labels.map((value) => Math.random() * (value / 365) * 2.5);
 
 export default {
   components: {

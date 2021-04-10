@@ -18,14 +18,18 @@ export default {
             id: "A",
             type: "linear",
             position: "left",
+            ticks: {
+              callback: (value) => `$${value}`,
+            },
           },
           {
             id: "B",
             type: "linear",
             position: "right",
             ticks: {
-              max: 10,
               min: 0,
+              max: 5,
+              callback: (value) => `${value.toFixed(2)}%`,
             },
           },
         ],
