@@ -37,6 +37,7 @@
   width: 1px;
   height: 12px;
   margin: 0 40px;
+  background: $color-neutral-400;
 }
 
 .navigation__links {

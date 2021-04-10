@@ -85,6 +85,7 @@ export default {
 }
 
 .metric__label {
+  margin-bottom: 4px;
   color: $color-neutral-300;
 }
 
@@ -99,6 +100,7 @@ export default {
 }
 
 .metric__change {
+  margin-top: 4px;
   font-weight: bold;
 }
 </style>
