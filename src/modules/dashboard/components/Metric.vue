@@ -5,7 +5,7 @@
       <strong>{{ formattedValueIntegerPart }}</strong>
       <span>.{{ formattedValueFractionalPart }}</span>
     </div>
-    <div v-if="change" class="metric__change">{{ formattedChange }}</div>
+    <div class="metric__change" v-if="change" v-html="formattedChange" />
   </div>
 </template>
 
@@ -31,7 +31,8 @@ export default {
       return this.splitValue[1];
     },
     formattedChange() {
-      return numeral(this.change).format("0.00%");
+      const triangle = this.change > 0 ? "&#9652;" : "&#9662;";
+      return `${triangle} ${numeral(this.change).format("0.00%")}`;
     },
   },
 };
