@@ -49,7 +49,7 @@
 }
 
 .navigation__link {
-  color: #82828d;
+  color: $color-neutral-200;
   font-weight: 500;
   font-size: 15.5px;
   letter-spacing: 0.25px;
@@ -58,15 +58,15 @@
     padding: 16px;
 
     &:hover {
-      color: #fff;
+      color: $color-neutral-100;
     }
 
     &.router-link-active {
-      color: #fff;
+      color: $color-neutral-100;
       font-weight: bold;
 
       text-underline-offset: 6px;
-      text-decoration: underline #fff 2px;
+      text-decoration: underline $color-neutral-100 2px;
     }
   }
 }

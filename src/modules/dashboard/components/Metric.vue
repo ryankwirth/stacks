@@ -40,7 +40,7 @@ export default {
 
 <style lang="scss">
 .metric {
-  color: $color-success;
+  color: $color-green-500;
   font-size: 13px;
   font-weight: bold;
 }
