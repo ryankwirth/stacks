@@ -2,7 +2,7 @@
   <nav class="navigation">
     <div class="navigation__logo">Stacks</div>
 
-    <div class="navigation__divider global__background--secondary" />
+    <div class="navigation__divider" />
 
     <ul class="navigation__links">
       <li class="navigation__link">
