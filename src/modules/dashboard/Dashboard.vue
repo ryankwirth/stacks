@@ -15,25 +15,29 @@ export default {
   computed: {
     chartData() {
       return {
-        labels: [this.getRandomInt(), this.getRandomInt()],
+        labels: [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+        ],
         datasets: [
           {
-            label: "Data One",
-            backgroundColor: "#f87979",
-            data: [this.getRandomInt(), this.getRandomInt()],
+            label: "Line data",
+            borderColor: "#00dd6a",
+            data: [40, 39, 10, 40, 39, 80, 40],
           },
           {
-            label: "Data One",
-            backgroundColor: "#f87979",
-            data: [this.getRandomInt(), this.getRandomInt()],
+            label: "bar data",
+            backgroundColor: "#3e4345",
+            data: [40, 39, 10, 40, 39, 80, 40],
+            type: "bar",
           },
         ],
       };
-    },
-  },
-  methods: {
-    getRandomInt() {
-      return Math.floor(Math.random() * (50 - 5 + 1)) + 5;
     },
   },
 };
