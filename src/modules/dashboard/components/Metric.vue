@@ -25,3 +25,14 @@ export default {
   }
 };
 </script>
+
+<style>
+.metric {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.metric__value {
+  font-size: 20px;
+}
+</style>
