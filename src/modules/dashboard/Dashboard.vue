@@ -7,9 +7,10 @@
 <script>
 import GrowthChart from "./components/GrowthChart.vue";
 
-const labels = [...Array(365).keys()];
-const lineData = labels.map((value) => Math.random() * value * 5_000);
-const barData = labels.map((value) => Math.random() * (value / 365) * 0.025);
+const days = [...Array(365).keys()];
+const labels = days.map((value) => new Date(1585769228000 + 86400000 * value));
+const lineData = days.map((value) => Math.random() * value * 5_000);
+const barData = days.map((value) => Math.random() * (value / 365) * 0.025);
 
 export default {
   components: {

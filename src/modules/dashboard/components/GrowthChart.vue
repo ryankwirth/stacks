@@ -15,6 +15,14 @@ export default {
         display: false,
       },
       scales: {
+        xAxes: [
+          {
+            type: "time",
+            time: {
+              unit: "month",
+            },
+          },
+        ],
         yAxes: [
           {
             id: "A",
