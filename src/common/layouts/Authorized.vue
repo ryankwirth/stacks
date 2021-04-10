@@ -14,3 +14,10 @@ export default {
   },
 };
 </script>
+
+<style>
+.authorized {
+  margin: 0 auto;
+  max-width: 1366px;
+}
+</style>
