@@ -1,7 +1,10 @@
 <template>
   <div class="metric">
     <div class="metric__label">{{ label }}</div>
-    <div class="metric__value">{{ formattedValue }}</div>
+    <div class="metric__value">
+      <strong>{{ formattedValueIntegerPart }}</strong>
+      <span>.{{ formattedValueFractionalPart }}</span>
+    </div>
     <div v-if="change" class="metric__change">{{ formattedChange }}</div>
   </div>
 </template>
@@ -16,23 +19,37 @@ export default {
     change: Number,
   },
   computed: {
-    formattedValue() {
-      return numeral(this.value).format("$0,0.00");
+    splitValue() {
+      return numeral(this.value)
+        .format("$0,0.00")
+        .split(".");
+    },
+    formattedValueIntegerPart() {
+      return this.splitValue[0];
+    },
+    formattedValueFractionalPart() {
+      return this.splitValue[1];
     },
     formattedChange() {
       return numeral(this.change).format("0.00%");
-    }
-  }
+    },
+  },
 };
 </script>
 
-<style>
+<style lang="scss">
 .metric {
   font-size: 13px;
   font-weight: bold;
 }
 
 .metric__value {
-  font-size: 20px;
+  strong {
+    font-size: 20px;
+  }
+
+  span {
+    font-size: 16px;
+  }
 }
 </style>
