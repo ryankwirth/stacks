@@ -21,6 +21,16 @@ export default {
             time: {
               unit: "month",
             },
+            gridLines: {
+              color: "#676771",
+              zeroLineColor: "#676771",
+              drawOnChartArea: false,
+              tickMarkLength: 5,
+            },
+            ticks: {
+              padding: 5,
+              fontColor: "#fff",
+            },
           },
         ],
         yAxes: [
@@ -31,9 +41,11 @@ export default {
             gridLines: {
               lineWidth: 2,
               color: "#1b1c1e",
+              zeroLineColor: "#676771",
             },
             ticks: {
-              callback: (value) => Numeral(value).format("$0a").toUpperCase(),
+              fontColor: "#fff",
+              callback: (value) => Numeral(value).format("$0.0a").toUpperCase(),
             },
           },
           {
@@ -43,7 +55,8 @@ export default {
             ticks: {
               min: 0,
               max: 0.05,
-              callback: (value) => Numeral(value).format("0.00%"),
+              fontColor: "#00dd6a",
+              callback: (value) => Numeral(value).format("0.0%"),
             },
           },
         ],
