@@ -1,5 +1,5 @@
 <template>
-  <line-chart :chart-data="chartData" :options="options" />
+  <line-chart :chart-data="chartData" :options="options" :style="styles" />
 </template>
 
 <script>
@@ -24,6 +24,13 @@ export default {
     },
     options() {
       return createOptions();
+    },
+    styles() {
+      return {
+        width: "100%",
+        height: "300px",
+        marginTop: "32px",
+      };
     },
   },
 };
