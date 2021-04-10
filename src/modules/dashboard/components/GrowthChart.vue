@@ -12,6 +12,24 @@ export default {
       legend: {
         display: false,
       },
+      scales: {
+        yAxes: [
+          {
+            id: "A",
+            type: "linear",
+            position: "left",
+          },
+          {
+            id: "B",
+            type: "linear",
+            position: "right",
+            ticks: {
+              max: 10,
+              min: 0,
+            },
+          },
+        ],
+      },
     },
   }),
   mounted() {

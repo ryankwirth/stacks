@@ -10,7 +10,7 @@ import GrowthChart from "./components/GrowthChart.vue";
 
 const labels = [...Array(365).keys()];
 const lineData = labels.map((value) => Math.random() * value);
-const barData = labels.map((value) => Math.random() * value);
+const barData = labels.map(() => Math.random() * 5);
 
 export default {
   components: {
@@ -23,13 +23,17 @@ export default {
         datasets: [
           {
             type: "line",
-            borderColor: "#00dd6a",
+            yAxisID: "A",
             data: lineData,
+            pointRadius: 0,
+            borderWidth: 2,
+            borderColor: "#00dd6a",
           },
           {
             type: "bar",
-            backgroundColor: "#3e4345",
+            yAxisID: "B",
             data: barData,
+            backgroundColor: "#3e4345",
           },
         ],
       };
