@@ -1,6 +1,5 @@
 <template>
   <div class="dashboard">
-    <div>Dashboard</div>
     <growth-chart :chart-data="chartData" />
   </div>
 </template>

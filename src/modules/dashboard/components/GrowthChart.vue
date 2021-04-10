@@ -20,6 +20,10 @@ export default {
             id: "A",
             type: "linear",
             position: "left",
+            gridLines: {
+              lineWidth: 2,
+              color: "#1b1c1e",
+            },
             ticks: {
               callback: (value) => Numeral(value).format("$0a").toUpperCase(),
             },
