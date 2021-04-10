@@ -8,6 +8,10 @@
 <script>
 import GrowthChart from "./components/GrowthChart.vue";
 
+const labels = [...Array(365).keys()];
+const lineData = labels.map((value) => Math.random() * value);
+const barData = labels.map((value) => Math.random() * value);
+
 export default {
   components: {
     GrowthChart,
@@ -15,26 +19,17 @@ export default {
   computed: {
     chartData() {
       return {
-        labels: [
-          "January",
-          "February",
-          "March",
-          "April",
-          "May",
-          "June",
-          "July",
-        ],
+        labels,
         datasets: [
           {
-            label: "Line data",
+            type: "line",
             borderColor: "#00dd6a",
-            data: [40, 39, 10, 40, 39, 80, 40],
+            data: lineData,
           },
           {
-            label: "bar data",
-            backgroundColor: "#3e4345",
-            data: [40, 39, 10, 40, 39, 80, 40],
             type: "bar",
+            backgroundColor: "#3e4345",
+            data: barData,
           },
         ],
       };
