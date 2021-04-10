@@ -5,7 +5,15 @@ const { reactiveProp } = mixins;
 export default {
   extends: Line,
   mixins: [reactiveProp],
-  props: ["options"],
+  data: () => ({
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      legend: {
+        display: false,
+      },
+    },
+  }),
   mounted() {
     this.renderChart(this.chartData, this.options);
   },
