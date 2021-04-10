@@ -23,6 +23,13 @@ export const createChartData = (labels, dollars, returns) => ({
 export const createOptions = () => ({
   responsive: true,
   maintainAspectRatio: false,
+  animation: {
+    duration: 0,
+  },
+  hover: {
+    animationDuration: 0,
+  },
+  responsiveAnimationDuration: 0,
   legend: {
     display: false,
   },
