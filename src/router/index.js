@@ -1,4 +1,5 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import Vue from 'vue'
+import VueRouter from 'vue-router'
 import { store } from '@/store'
 
 import { SignIn } from '@/modules/sign-in'
@@ -10,7 +11,10 @@ import { Dashboard } from '@/modules/dashboard'
 import { Positions } from '@/modules/positions'
 import { Strategies } from '@/modules/strategies'
 
-export const router = createRouter({
+Vue.use(VueRouter)
+
+export const router = new VueRouter({
+  mode: 'history',
   routes: [
     {
       path: '/sign-in',
@@ -53,7 +57,6 @@ export const router = createRouter({
       }
     }
   ],
-  history: createWebHistory()
 })
 
 router.beforeEach((to, from, next) => {

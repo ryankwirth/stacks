@@ -1,10 +1,14 @@
-import { createStore } from 'vuex'
+import Vue from 'vue'
+import Vuex from 'vuex'
 import createPersistedState from 'vuex-persistedstate'
+
 import { auth } from './auth'
 
-export const store = createStore({
+Vue.use(Vuex)
+
+export const store = new Vuex.Store({
   modules: {
     auth
   },
-  plugins: [ createPersistedState() ]
+  plugins: [createPersistedState()]
 })
