@@ -1,5 +1,25 @@
 import numeral from "numeral";
 
+export const createChartData = (labels, dollars, returns) => ({
+  labels,
+  datasets: [
+    {
+      type: "line",
+      yAxisID: "dollars",
+      data: dollars,
+      pointRadius: 0,
+      borderWidth: 1.5,
+      borderColor: "#00dd6a",
+    },
+    {
+      type: "bar",
+      yAxisID: "returns",
+      data: returns,
+      backgroundColor: "#3e4345",
+    },
+  ],
+});
+
 export const createOptions = () => ({
   responsive: true,
   maintainAspectRatio: false,
@@ -44,7 +64,7 @@ export const createOptions = () => ({
         },
       },
       {
-        id: "return",
+        id: "returns",
         type: "linear",
         position: "right",
         ticks: {
