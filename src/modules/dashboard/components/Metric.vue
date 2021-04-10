@@ -2,8 +2,8 @@
   <div class="metric">
     <div class="metric__label">{{ label }}</div>
     <div class="metric__value">
-      <strong>{{ formattedValueIntegerPart }}</strong>
-      <span>.{{ formattedValueFractionalPart }}</span>
+      <span>{{ formattedValueIntegerPart }}</span>
+      <small>.{{ formattedValueFractionalPart }}</small>
     </div>
     <div class="metric__change" v-if="change" v-html="formattedChange" />
   </div>
@@ -40,18 +40,25 @@ export default {
 
 <style lang="scss">
 .metric {
-  color: $color-green-500;
   font-size: 13px;
-  font-weight: bold;
+  font-weight: 500;
+}
+
+.metric__label {
+  color: $color-neutral-300;
 }
 
 .metric__value {
-  strong {
+  span {
     font-size: 20px;
   }
 
-  span {
+  small {
     font-size: 16px;
   }
+}
+
+.metric__change {
+  font-weight: bold;
 }
 </style>
