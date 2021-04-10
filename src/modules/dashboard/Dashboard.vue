@@ -1,9 +1,7 @@
 <template>
   <div class="dashboard">
-    <div class="dashboard__metrics">
-      <metric label="All Over Value" :value="2341558.76" />
-      <metric label="Return" :value="1217610.16" :change="0.521" />
-      <metric label="Last 1 Year" :value="140493.86" :change="0.0602" />
+    <div class="dashboard__header">
+      <metrics />
     </div>
     <growth-chart />
   </div>
@@ -11,18 +9,18 @@
 
 <script>
 import GrowthChart from "./components/GrowthChart.vue";
-import Metric from "./components/Metric.vue";
+import Metrics from "./components/Metrics.vue";
 
 export default {
   components: {
     GrowthChart,
-    Metric,
+    Metrics,
   },
 };
 </script>
 
 <style>
-.dashboard__metrics {
+.dashboard__header {
   display: flex;
 }
 </style>
