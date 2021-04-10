@@ -1,5 +1,7 @@
 <script>
+import Numeral from "numeral";
 import { Line, mixins } from "vue-chartjs";
+
 const { reactiveProp } = mixins;
 
 export default {
@@ -19,7 +21,7 @@ export default {
             type: "linear",
             position: "left",
             ticks: {
-              callback: (value) => `$${value}`,
+              callback: (value) => Numeral(value).format("$0a").toUpperCase(),
             },
           },
           {
@@ -28,8 +30,8 @@ export default {
             position: "right",
             ticks: {
               min: 0,
-              max: 5,
-              callback: (value) => `${value.toFixed(2)}%`,
+              max: 0.05,
+              callback: (value) => Numeral(value).format("0.00%"),
             },
           },
         ],
