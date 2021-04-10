@@ -35,7 +35,7 @@ export default {
         ],
         yAxes: [
           {
-            id: "A",
+            id: "dollars",
             type: "linear",
             position: "left",
             gridLines: {
@@ -49,7 +49,7 @@ export default {
             },
           },
           {
-            id: "B",
+            id: "return",
             type: "linear",
             position: "right",
             ticks: {

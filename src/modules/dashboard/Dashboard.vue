@@ -23,15 +23,15 @@ export default {
         datasets: [
           {
             type: "line",
-            yAxisID: "A",
+            yAxisID: "dollars",
             data: lineData,
             pointRadius: 0,
-            borderWidth: 2,
+            borderWidth: 1.5,
             borderColor: "#00dd6a",
           },
           {
             type: "bar",
-            yAxisID: "B",
+            yAxisID: "return",
             data: barData,
             backgroundColor: "#3e4345",
           },
