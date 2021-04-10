@@ -1,4 +1,5 @@
 import numeral from "numeral";
+import exports from "@/assets/styles/variables/_exports.scss";
 
 export const createChartData = (labels, dollars, returns) => ({
   labels,
@@ -9,13 +10,13 @@ export const createChartData = (labels, dollars, returns) => ({
       data: dollars,
       pointRadius: 0,
       borderWidth: 1.5,
-      borderColor: "#00dd6a",
+      borderColor: exports.colorGreen500,
     },
     {
       type: "bar",
       yAxisID: "returns",
       data: returns,
-      backgroundColor: "#3e4345",
+      backgroundColor: exports.colorNeutral400,
     },
   ],
 });
@@ -41,14 +42,14 @@ export const createOptions = () => ({
           unit: "month",
         },
         gridLines: {
-          color: "#676771",
-          zeroLineColor: "#676771",
+          color: exports.colorNeutral300,
+          zeroLineColor: exports.colorNeutral300,
           drawOnChartArea: false,
           tickMarkLength: 5,
         },
         ticks: {
           padding: 5,
-          fontColor: "#fff",
+          fontColor: exports.colorNeutral100,
         },
       },
     ],
@@ -59,11 +60,11 @@ export const createOptions = () => ({
         position: "left",
         gridLines: {
           lineWidth: 2,
-          color: "#1b1c1e",
-          zeroLineColor: "#676771",
+          color: exports.colorNeutral800,
+          zeroLineColor: exports.colorNeutral300,
         },
         ticks: {
-          fontColor: "#fff",
+          fontColor: exports.colorNeutral100,
           callback: (value) =>
             numeral(value)
               .format("$0.0a")
@@ -77,7 +78,7 @@ export const createOptions = () => ({
         ticks: {
           min: 0,
           max: 0.05,
-          fontColor: "#00dd6a",
+          fontColor: exports.colorGreen500,
           callback: (value) => numeral(value).format("0.0%"),
         },
       },
