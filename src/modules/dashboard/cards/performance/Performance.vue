@@ -1,6 +1,6 @@
 <template>
-  <div class="summary">
-    <div class="summary__header">
+  <div class="performance">
+    <div class="performance__header">
       <metrics />
       <range-selector />
     </div>
@@ -22,8 +22,14 @@ export default {
 };
 </script>
 
-<style>
-.summary__header {
+<style lang="scss">
+.performance {
+  padding: 16px 12px;
+  border-radius: 6px;
+  box-shadow: 0 8px 16px $color-neutral-900;
+}
+
+.performance__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
