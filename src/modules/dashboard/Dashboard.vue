@@ -1,31 +1,17 @@
 <template>
   <div class="dashboard">
-    <div class="dashboard__header">
-      <metrics />
-      <range-selector />
-    </div>
-    <growth-chart />
+    <performance />
+    <accounts />
   </div>
 </template>
 
 <script>
-import GrowthChart from "./components/GrowthChart.vue";
-import Metrics from "./components/Metrics.vue";
-import RangeSelector from "./components/RangeSelector.vue";
+import { Accounts, Performance } from "./cards";
 
 export default {
   components: {
-    GrowthChart,
-    Metrics,
-    RangeSelector,
+    Performance,
+    Accounts,
   },
 };
 </script>
-
-<style>
-.dashboard__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-</style>
