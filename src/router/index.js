@@ -5,7 +5,7 @@ import { store } from '@/store'
 import { SignIn } from '@/modules/sign-in'
 import { SignUp } from '@/modules/sign-up'
 
-import { Authorized } from '@/common/layouts'
+import { Main } from '@/common/layouts'
 import { Accounts } from '@/modules/accounts'
 import { Dashboard } from '@/modules/dashboard'
 import { Positions } from '@/modules/positions'
@@ -29,7 +29,7 @@ export const router = new VueRouter({
     {
       path: '/',
       redirect: '/dashboard',
-      component: Authorized,
+      component: Main,
       children: [
         {
           path: 'accounts',

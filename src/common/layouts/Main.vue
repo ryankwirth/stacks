@@ -1,5 +1,5 @@
 <template>
-  <div class="authorized">
+  <div class="main">
     <Navigation />
     <router-view />
   </div>
@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style>
-.authorized {
+.main {
   margin: 0 auto;
   max-width: 1366px;
 }

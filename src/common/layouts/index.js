@@ -1,1 +1,1 @@
-export { default as Authorized } from './Authorized.vue'
+export { default as Main } from './Main.vue'
