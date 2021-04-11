@@ -29,6 +29,7 @@
 }
 
 .navigation__logo {
+  width: 118px;
   font-weight: bold;
   padding-right: 16px;
 }
