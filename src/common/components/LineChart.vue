@@ -1,14 +1,17 @@
 <script>
-import { Line, mixins } from "vue-chartjs";
-
-const { reactiveProp } = mixins;
+import { Line } from "vue-chartjs";
 
 export default {
   extends: Line,
-  mixins: [reactiveProp],
-  props: ["options"],
+  props: {
+    createData: Function,
+    createOptions: Function,
+  },
   mounted() {
-    this.renderChart(this.chartData, this.options);
+    const ctx = this.$refs.canvas.getContext("2d");
+    const data = this.createData(ctx);
+    const options = this.createOptions(ctx);
+    this.renderChart(data, options);
   },
 };
 </script>

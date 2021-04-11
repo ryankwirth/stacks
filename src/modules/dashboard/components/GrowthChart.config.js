@@ -1,7 +1,14 @@
 import numeral from "numeral";
 import exports from "@/assets/styles/variables/_exports.scss";
 
-export const createChartData = (labels, dollars, returns) => ({
+const createGradient = (ctx) => {
+  const gradient = ctx.createLinearGradient(0, 0, 0, 300);
+  gradient.addColorStop(0, `${exports.colorGreen500}0a`);
+  gradient.addColorStop(1, `${exports.colorGreen500}04`);
+  return gradient;
+};
+
+export const createData = (labels, dollars, returns) => (ctx) => ({
   labels,
   datasets: [
     {
@@ -11,6 +18,7 @@ export const createChartData = (labels, dollars, returns) => ({
       pointRadius: 0,
       borderWidth: 1.5,
       borderColor: exports.colorGreen500,
+      backgroundColor: createGradient(ctx),
     },
     {
       type: "bar",
@@ -21,7 +29,7 @@ export const createChartData = (labels, dollars, returns) => ({
   ],
 });
 
-export const createOptions = () => ({
+export const createOptions = () => () => ({
   responsive: true,
   maintainAspectRatio: false,
   animation: {
