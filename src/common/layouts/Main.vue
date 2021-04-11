@@ -36,7 +36,7 @@ export default {
 
 .main__contents {
   flex: 1;
-  padding: 32px 0;
+  padding: 20px 0;
   background: $color-neutral-800;
 }
 

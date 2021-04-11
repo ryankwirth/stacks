@@ -24,7 +24,7 @@ export default {
 
 <style lang="scss">
 .performance {
-  padding: 16px 12px;
+  padding: 12px;
   border-radius: 6px;
   box-shadow: 0 8px 16px $color-neutral-900;
 }
