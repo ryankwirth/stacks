@@ -1,4 +1,3 @@
-import numeral from "numeral";
 import exports from "@/assets/styles/variables/_exports.scss";
 
 const createGradient = (ctx) => {
@@ -44,14 +43,10 @@ export const createOptions = () => () => ({
           unit: "month",
         },
         gridLines: {
-          color: exports.colorNeutral300,
-          zeroLineColor: exports.colorNeutral300,
-          drawOnChartArea: false,
-          tickMarkLength: 5,
+          display: false,
         },
         ticks: {
-          padding: 5,
-          fontColor: exports.colorNeutral100,
+          display: false,
         },
       },
     ],
@@ -61,27 +56,10 @@ export const createOptions = () => () => ({
         type: "linear",
         position: "left",
         gridLines: {
-          lineWidth: 2,
-          color: exports.colorNeutral800,
-          zeroLineColor: exports.colorNeutral300,
+          display: false,
         },
         ticks: {
-          fontColor: exports.colorNeutral100,
-          callback: (value) =>
-            numeral(value)
-              .format("$0.0a")
-              .toUpperCase(),
-        },
-      },
-      {
-        id: "returns",
-        type: "linear",
-        position: "right",
-        ticks: {
-          min: 0,
-          max: 0.05,
-          fontColor: exports.colorGreen500,
-          callback: (value) => numeral(value).format("0.0%"),
+          display: false,
         },
       },
     ],
