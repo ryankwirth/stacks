@@ -9,7 +9,7 @@
       </div>
       <div class="account__change" v-html="formattedChange" />
     </div>
-    <div class="account_chart">
+    <div class="account__chart">
       <account-chart />
     </div>
   </div>

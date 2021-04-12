@@ -23,7 +23,7 @@ export const createData = (labels, dollars) => (ctx) => ({
 });
 
 export const createOptions = () => () => ({
-  responsive: true,
+  //responsive: true,
   maintainAspectRatio: false,
   animation: {
     duration: 0,
