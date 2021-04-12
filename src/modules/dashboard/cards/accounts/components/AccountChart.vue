@@ -31,6 +31,7 @@ export default {
     },
     styles() {
       return {
+        width: "100px",
         height: "100px",
       };
     },

@@ -35,8 +35,14 @@ export default {
 </script>
 
 <style lang="scss">
-.accounts h1 {
-  font-size: 20px;
+.accounts {
+  padding: 12px;
+  border-radius: 6px;
+  box-shadow: 0 8px 16px $color-neutral-900;
+
+  h1 {
+    font-size: 20px;
+  }
 }
 
 .accounts__list {
