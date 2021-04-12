@@ -65,6 +65,7 @@ export default {
 .account {
   display: flex;
   flex: 1;
+  overflow: hidden;
 
   font-size: 17.5px;
   font-weight: bold;
@@ -109,6 +110,7 @@ export default {
 }
 
 .account__chart {
+  position: relative;
   flex: 1;
 }
 </style>

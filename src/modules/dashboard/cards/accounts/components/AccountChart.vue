@@ -4,7 +4,6 @@
     :create-options="createOptions"
     :style="styles"
     :width="100"
-    :height="null"
   />
 </template>
 
@@ -33,8 +32,11 @@ export default {
     },
     styles() {
       return {
-        //width: "100%",
-        height: "100%",
+        position: "absolute",
+        left: "0",
+        right: "0",
+        bottom: "-2px",
+        height: "114px",
       };
     },
   },

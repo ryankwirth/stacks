@@ -47,5 +47,6 @@ export default {
 
 .accounts__list {
   display: flex;
+  gap: 24px;
 }
 </style>

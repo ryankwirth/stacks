@@ -1,9 +1,9 @@
 import exports from "@/assets/styles/variables/_exports.scss";
 
 const createGradient = (ctx) => {
-  const gradient = ctx.createLinearGradient(0, 0, 0, 300);
-  gradient.addColorStop(0, `${exports.colorGreen500}0a`);
-  gradient.addColorStop(1, `${exports.colorGreen500}04`);
+  const gradient = ctx.createLinearGradient(0, 0, 0, 112);
+  gradient.addColorStop(0, `${exports.colorGreen500}22`);
+  gradient.addColorStop(1, `${exports.colorGreen500}02`);
   return gradient;
 };
 
@@ -23,7 +23,7 @@ export const createData = (labels, dollars) => (ctx) => ({
 });
 
 export const createOptions = () => () => ({
-  //responsive: true,
+  responsive: true,
   maintainAspectRatio: false,
   animation: {
     duration: 0,
@@ -42,26 +42,18 @@ export const createOptions = () => () => ({
         time: {
           unit: "month",
         },
-        gridLines: {
-          display: false,
-        },
-        ticks: {
-          display: false,
-        },
+        display: false,
       },
     ],
     yAxes: [
       {
         id: "dollars",
         type: "linear",
-        position: "left",
-        gridLines: {
-          display: false,
-        },
-        ticks: {
-          display: false,
-        },
+        display: false,
       },
     ],
+  },
+  tooltips: {
+    enabled: false,
   },
 });
