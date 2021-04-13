@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import { Accounts, Performance } from "./cards";
+import { Accounts, Performance } from "./widgets";
 
 export default {
   components: {
