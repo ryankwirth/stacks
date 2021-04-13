@@ -15,6 +15,9 @@ export default {
   components: {
     LineChart,
   },
+  props: {
+    change: Number,
+  },
   computed: {
     createData() {
       const days = [...Array(365).keys()];
@@ -22,10 +25,8 @@ export default {
         (value) => new Date(1585769228000 + 86400000 * value)
       );
       const dollars = days.map((value) => value * 5_000);
-      const returns = days.map(
-        (value) => Math.random() * (value / 365) * 0.025
-      );
-      return createData(labels, dollars, returns);
+      const isPositive = this.change >= 0;
+      return createData(labels, dollars, isPositive);
     },
     createOptions() {
       return createOptions();
