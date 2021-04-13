@@ -3,9 +3,8 @@
     <h1>Asset Allocation</h1>
     <div class="allocation__details">
       <div class="allocation__chart">
-        Chart!
+        <allocation-chart />
       </div>
-
       <div class="allocation__items">
         <allocation-item name="Hello" :value="0.0" :proportion="0.5402" />
         <allocation-item name="Hello" :value="0.0" :proportion="0.5402" />
@@ -17,10 +16,12 @@
 </template>
 
 <script>
+import AllocationChart from "./components/AllocationChart.vue";
 import AllocationItem from "./components/AllocationItem.vue";
 
 export default {
   components: {
+    AllocationChart,
     AllocationItem,
   },
 };
