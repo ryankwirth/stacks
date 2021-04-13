@@ -16,8 +16,7 @@
 </template>
 
 <script>
-import AllocationChart from "./components/AllocationChart.vue";
-import AllocationItem from "./components/AllocationItem.vue";
+import { AllocationChart, AllocationItem } from "./components";
 
 export default {
   components: {

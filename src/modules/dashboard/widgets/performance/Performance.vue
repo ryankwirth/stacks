@@ -9,9 +9,7 @@
 </template>
 
 <script>
-import GrowthChart from "./components/GrowthChart.vue";
-import Metrics from "./components/Metrics.vue";
-import RangeSelector from "./components/RangeSelector.vue";
+import { GrowthChart, Metrics, RangeSelector } from "./components";
 
 export default {
   components: {
