@@ -4,6 +4,7 @@
     <div class="allocation__details">
       <div class="allocation__chart">
         <allocation-chart />
+        <allocation-summary name="EUR" color="#8ac8bb" :value="70456765" />
       </div>
       <div class="allocation__items">
         <allocation-item
@@ -30,12 +31,17 @@
 </template>
 
 <script>
-import { AllocationChart, AllocationItem } from "./components";
+import {
+  AllocationChart,
+  AllocationItem,
+  AllocationSummary,
+} from "./components";
 
 export default {
   components: {
     AllocationChart,
     AllocationItem,
+    AllocationSummary,
   },
 };
 </script>
@@ -64,6 +70,8 @@ export default {
 }
 
 .allocation__chart {
+  position: relative;
+
   display: flex;
   align-items: center;
   justify-content: center;
