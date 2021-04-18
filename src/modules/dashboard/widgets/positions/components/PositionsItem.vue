@@ -22,7 +22,7 @@ export default {
       return numeral(this.value).format("$0,0");
     },
     formattedReturn() {
-      return numeral(this.return).format("0%");
+      return numeral(this.return).format("+0.0%");
     },
   },
 };

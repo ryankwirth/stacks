@@ -1,3 +1,6 @@
+import exports from "@/assets/styles/variables/_exports.scss";
+import numeral from "numeral";
+
 export const createData = (positions) => () => ({
   labels: positions.map((position) => position.name),
   datasets: [
@@ -33,5 +36,16 @@ export const createOptions = () => () => ({
         },
       },
     ],
+    yAxes: [
+      {
+        type: "linear",
+        position: "left",
+        ticks: {
+          min: 0,
+          fontColor: exports.colorGreen500,
+          callback: (value) => numeral(value).format("+0%"),
+        }
+      }
+    ]
   },
 });
