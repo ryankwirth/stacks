@@ -41,7 +41,6 @@ export const createOptions = () => () => ({
         type: "linear",
         position: "left",
         ticks: {
-          min: 0,
           fontColor: exports.colorGreen500,
           callback: (value) => numeral(value).format("+0%"),
         }

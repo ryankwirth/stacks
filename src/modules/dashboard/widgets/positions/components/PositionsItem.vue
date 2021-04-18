@@ -1,5 +1,5 @@
 <template>
-  <div class="positions-item">
+  <div :class="classes">
     <div class="positions-item__icon" :style="{ background: color }"></div>
     <div class="positions-item__name">{{ name }}</div>
     <div class="positions-item__value">{{ formattedValue }}</div>
@@ -18,6 +18,18 @@ export default {
     return: Number,
   },
   computed: {
+    classes() {
+      return ["positions-item", `positions-item--${this.returnType}`];
+    },
+    returnType() {
+      if (this.return > 0) {
+        return "positive";
+      } else if (this.return < 0) {
+        return "negative";
+      } else {
+        return "neutral";
+      }
+    },
     formattedValue() {
       return numeral(this.value).format("$0,0");
     },
@@ -37,6 +49,20 @@ export default {
 
   font-size: 16px;
   font-weight: 500;
+}
+
+.positions-item--positive {
+  .positions-item__value,
+  .positions-item__return {
+    color: $color-green-500;
+  }
+}
+
+.positions-item--negative {
+  .positions-item__value,
+  .positions-item__return {
+    color: $color-red-500;
+  }
 }
 
 .positions-item__icon {
