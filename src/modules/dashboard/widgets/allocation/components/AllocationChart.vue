@@ -18,8 +18,9 @@ export default {
   computed: {
     createData() {
       const labels = ["Test", "Test2", "Test3"];
-      const dollars = [1, 2, 3];
-      return createData(labels, dollars);
+      const dollars = [60, 27, 13];
+      const colors = ["#606b85", "#8ac8bb", "#6d6785"];
+      return createData(labels, dollars, colors);
     },
     createOptions() {
       return createOptions();

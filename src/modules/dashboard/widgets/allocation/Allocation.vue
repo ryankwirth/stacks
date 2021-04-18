@@ -6,10 +6,24 @@
         <allocation-chart />
       </div>
       <div class="allocation__items">
-        <allocation-item name="Hello" :value="0.0" :proportion="0.5402" />
-        <allocation-item name="Hello" :value="0.0" :proportion="0.5402" />
-        <allocation-item name="Hello" :value="0.0" :proportion="0.5402" />
-        <allocation-item name="Hello" :value="0.0" :proportion="0.5402" />
+        <allocation-item
+          name="USD"
+          color="#606b85"
+          :value="140674235"
+          :proportion="0.61"
+        />
+        <allocation-item
+          name="EUR"
+          color="#8ac8bb"
+          :value="70456765"
+          :proportion="0.27"
+        />
+        <allocation-item
+          name="RUB"
+          color="#6d6785"
+          :value="23400564"
+          :proportion="0.12"
+        />
       </div>
     </div>
   </div>
@@ -41,16 +55,19 @@ export default {
 
 .allocation__details {
   display: flex;
+
+  > div {
+    flex: 1;
+  }
 }
 
 .allocation__chart {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 1;
 }
 
 .allocation__items {
-  flex: 1;
+  margin: 0 12px;
 }
 </style>
