@@ -8,19 +8,20 @@
     </div>
     <div class="dashboard__widget">
       <allocation />
-      <allocation />
+      <positions />
     </div>
   </div>
 </template>
 
 <script>
-import { Accounts, Allocation, Performance } from "./widgets";
+import { Accounts, Allocation, Performance, Positions } from "./widgets";
 
 export default {
   components: {
     Accounts,
     Allocation,
     Performance,
+    Positions,
   },
 };
 </script>
