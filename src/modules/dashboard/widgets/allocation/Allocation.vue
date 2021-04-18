@@ -44,6 +44,9 @@ export default {
 }
 
 .allocation__chart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex: 1;
 }
 
