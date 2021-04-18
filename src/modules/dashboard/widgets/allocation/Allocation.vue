@@ -50,11 +50,13 @@ export default {
 
   h1 {
     font-size: 20px;
+    margin-bottom: 24px;
   }
 }
 
 .allocation__details {
   display: flex;
+  margin-bottom: 12px;
 
   > div {
     flex: 1;
@@ -68,6 +70,6 @@ export default {
 }
 
 .allocation__items {
-  margin: 0 12px;
+  margin: 0 20px;
 }
 </style>

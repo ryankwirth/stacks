@@ -28,5 +28,6 @@ export default {
 <style lang="scss">
 .dashboard__widget {
   display: flex;
+  gap: 20px;
 }
 </style>
