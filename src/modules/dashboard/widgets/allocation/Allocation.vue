@@ -28,12 +28,26 @@ export default {
 
 <style lang="scss">
 .allocation {
+  flex: 1;
   padding: 12px;
+
   border-radius: 6px;
   box-shadow: 0 8px 16px $color-neutral-900;
 
   h1 {
     font-size: 20px;
   }
+}
+
+.allocation__details {
+  display: flex;
+}
+
+.allocation__chart {
+  flex: 1;
+}
+
+.allocation__items {
+  flex: 1;
 }
 </style>

@@ -3,7 +3,6 @@
     :create-data="createData"
     :create-options="createOptions"
     :style="styles"
-    :width="100"
   />
 </template>
 
@@ -26,11 +25,6 @@ export default {
     },
     styles() {
       return {
-        position: "absolute",
-        left: "0",
-        right: "0",
-        bottom: "-2px",
-        height: "114px",
       };
     },
   },

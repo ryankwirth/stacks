@@ -36,7 +36,9 @@ export default {
 
 <style lang="scss">
 .accounts {
+  flex: 1;
   padding: 12px;
+
   border-radius: 6px;
   box-shadow: 0 8px 16px $color-neutral-900;
 

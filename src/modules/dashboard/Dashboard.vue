@@ -1,8 +1,15 @@
 <template>
   <div class="dashboard">
-    <performance />
-    <accounts />
-    <allocation />
+    <div class="dashboard__widget">
+      <performance />
+    </div>
+    <div class="dashboard__widget">
+      <accounts />
+    </div>
+    <div class="dashboard__widget">
+      <allocation />
+      <allocation />
+    </div>
   </div>
 </template>
 
@@ -17,3 +24,9 @@ export default {
   },
 };
 </script>
+
+<style lang="scss">
+.dashboard__widget {
+  display: flex;
+}
+</style>
