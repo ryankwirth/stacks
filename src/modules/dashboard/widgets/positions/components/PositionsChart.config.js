@@ -1,14 +1,10 @@
-import exports from "@/assets/styles/variables/_exports.scss";
-
-export const createData = (labels, dollars, colors) => () => ({
-  labels,
+export const createData = (positions) => () => ({
+  labels: positions.map((position) => position.name),
   datasets: [
     {
       type: "bar",
-      data: dollars,
-      borderWidth: 2.5,
-      borderColor: exports.colorNeutral800,
-      backgroundColor: colors,
+      data: positions.map((position) => position.return),
+      backgroundColor: positions.map((position) => position.color),
     },
   ],
 });
@@ -26,5 +22,16 @@ export const createOptions = () => () => ({
   legend: {
     display: false,
   },
-  cutoutPercentage: 83,
+  scales: {
+    xAxes: [
+      {
+        gridLines: {
+          display: false,
+        },
+        ticks: {
+          display: false,
+        },
+      },
+    ],
+  },
 });

@@ -3,7 +3,7 @@
     <div class="positions-item__icon" :style="{ background: color }"></div>
     <div class="positions-item__name">{{ name }}</div>
     <div class="positions-item__value">{{ formattedValue }}</div>
-    <div class="positions-item__proportion">{{ formattedProportion }}</div>
+    <div class="positions-item__return">{{ formattedReturn }}</div>
   </div>
 </template>
 
@@ -15,14 +15,14 @@ export default {
     name: String,
     color: String,
     value: Number,
-    proportion: Number,
+    return: Number,
   },
   computed: {
     formattedValue() {
       return numeral(this.value).format("$0,0");
     },
-    formattedProportion() {
-      return numeral(this.proportion).format("0%");
+    formattedReturn() {
+      return numeral(this.return).format("0%");
     },
   },
 };
@@ -50,7 +50,7 @@ export default {
   margin-left: 16px;
 }
 
-.positions-item__proportion {
+.positions-item__return {
   margin-left: 24px;
 }
 </style>
