@@ -4,7 +4,7 @@ export const createData = (labels, dollars, colors) => () => ({
   labels,
   datasets: [
     {
-      type: "doughnut",
+      type: "bar",
       data: dollars,
       borderWidth: 2.5,
       borderColor: exports.colorNeutral800,

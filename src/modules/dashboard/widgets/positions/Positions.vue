@@ -1,6 +1,6 @@
 <template>
   <div class="positions">
-    <h1>Asset Positions</h1>
+    <h1>Top 5 Positions</h1>
     <div class="positions__details">
       <div class="positions__chart">
         <positions-chart />

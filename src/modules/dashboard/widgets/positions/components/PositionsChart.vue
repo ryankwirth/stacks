@@ -1,5 +1,5 @@
 <template>
-  <doughnut-chart
+  <bar-chart
     :create-data="createData"
     :create-options="createOptions"
     :style="styles"
@@ -8,12 +8,12 @@
 </template>
 
 <script>
-import DoughnutChart from "@/common/components/DoughnutChart.vue";
+import BarChart from "@/common/components/BarChart.vue";
 import { createData, createOptions } from "./PositionsChart.config";
 
 export default {
   components: {
-    DoughnutChart,
+    BarChart,
   },
   computed: {
     createData() {
