@@ -12,5 +12,15 @@ export const store = new Vuex.Store({
     auth,
     profile,
   },
-  plugins: [createPersistedState()],
+  plugins: [
+    createPersistedState({
+      paths: ["auth"],
+    }),
+  ],
+});
+
+// Subscribe to the current user's profile
+store.watch((state) => {
+  const user = state.auth.user || {};
+  store.dispatch("profile/subscribe", user);
 });
