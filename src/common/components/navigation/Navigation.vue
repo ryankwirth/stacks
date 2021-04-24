@@ -18,6 +18,12 @@
         <router-link to="/strategies">Strategies</router-link>
       </li>
     </ul>
+
+    <ul class="navigation__links">
+      <li class="navigation__link">
+        <a>Upload</a>
+      </li>
+    </ul>
   </nav>
 </template>
 
@@ -58,6 +64,7 @@
 
   a {
     padding: 16px;
+    cursor: pointer;
 
     &:hover {
       color: $color-neutral-100;

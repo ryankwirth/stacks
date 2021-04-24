@@ -10,15 +10,29 @@
         <router-view />
       </div>
     </div>
+    <div class="main__modals">
+      <UploadModal :open="isUploadModalOpen" />
+    </div>
   </div>
 </template>
 
 <script>
-import { Navigation } from "@/common/components";
+import { Navigation, UploadModal } from "@/common/components";
 
 export default {
   components: {
     Navigation,
+    UploadModal,
+  },
+  data() {
+    return {
+      isUploadModalOpen: false,
+    };
+  },
+  methods: {
+    openUploadModal() {
+      this.isUploadModalOpen = true;
+    },
   },
 };
 </script>
