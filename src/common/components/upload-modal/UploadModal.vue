@@ -1,6 +1,9 @@
 <template>
   <div :class="classes">
-    Upload Modal!
+    <div class="upload-modal__content">
+      <h1>Upload</h1>
+      <input type="file" v-on:change="onChange" />
+    </div>
   </div>
 </template>
 
@@ -15,11 +18,21 @@ export default {
       return ["upload-modal", `upload-modal--${modifier}`];
     },
   },
+  methods: {
+    onChange(event) {
+      const files = event.target.files;
+      console.log(files);
+    },
+  },
 };
 </script>
 
 <style lang="scss">
 .upload-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   position: absolute;
   top: 0;
   left: 0;
@@ -32,5 +45,11 @@ export default {
 
 .upload-modal--closed {
   display: none;
+}
+
+.upload-modal__content {
+  width: 512px;
+  height: 512px;
+  background: $color-neutral-700;
 }
 </style>

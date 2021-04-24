@@ -31,7 +31,6 @@ export default {
   },
   methods: {
     openUploadModal() {
-      console.log("openUploadModal");
       this.isUploadModalOpen = true;
     },
   },
