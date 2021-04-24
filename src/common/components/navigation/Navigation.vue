@@ -5,18 +5,10 @@
     <div class="navigation__divider" />
 
     <ul class="navigation__links">
-      <li class="navigation__link">
-        <router-link to="/dashboard">Dashboard</router-link>
-      </li>
-      <li class="navigation__link">
-        <router-link to="/accounts">Accounts</router-link>
-      </li>
-      <li class="navigation__link">
-        <router-link to="/positions">Positions</router-link>
-      </li>
-      <li class="navigation__link">
-        <router-link to="/strategies">Strategies</router-link>
-      </li>
+      <navigation-link label="Dashboard" path="/dashboard" />
+      <navigation-link label="Accounts" path="/accounts" />
+      <navigation-link label="Positions" path="/positions" />
+      <navigation-link label="Strategies" path="/strategies" />
     </ul>
 
     <ul class="navigation__links">
@@ -26,6 +18,16 @@
     </ul>
   </nav>
 </template>
+
+<script>
+import NavigationLink from "./NavigationLink.vue";
+
+export default {
+  components: {
+    NavigationLink,
+  },
+};
+</script>
 
 <style lang="scss">
 .navigation {
@@ -54,29 +56,5 @@
   margin: 0;
   padding: 0;
   list-style: none;
-}
-
-.navigation__link {
-  color: $color-neutral-200;
-  font-weight: 500;
-  font-size: 15.5px;
-  letter-spacing: 0.25px;
-
-  a {
-    padding: 16px;
-    cursor: pointer;
-
-    &:hover {
-      color: $color-neutral-100;
-    }
-
-    &.router-link-active {
-      color: $color-neutral-100;
-      font-weight: bold;
-
-      text-underline-offset: 6px;
-      text-decoration: underline $color-neutral-100 2px;
-    }
-  }
 }
 </style>
