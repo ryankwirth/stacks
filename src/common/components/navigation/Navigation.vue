@@ -11,20 +11,20 @@
       <navigation-link label="Strategies" path="/strategies" />
     </ul>
 
-    <ul class="navigation__links">
-      <li class="navigation__link">
-        <a>Upload</a>
-      </li>
+    <ul class="navigation__options">
+      <navigation-option label="Upload" />
     </ul>
   </nav>
 </template>
 
 <script>
 import NavigationLink from "./NavigationLink.vue";
+import NavigationOption from "./NavigationOption.vue";
 
 export default {
   components: {
     NavigationLink,
+    NavigationOption,
   },
 };
 </script>
@@ -52,6 +52,14 @@ export default {
 .navigation__links {
   display: flex;
   flex: 1;
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.navigation__options {
+  display: flex;
 
   margin: 0;
   padding: 0;
