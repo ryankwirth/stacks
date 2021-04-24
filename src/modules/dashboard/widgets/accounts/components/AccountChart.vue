@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import LineChart from "@/common/components/LineChart.vue";
+import { LineChart } from "@/common/components";
 import { createData, createOptions } from "./AccountChart.config";
 
 export default {

@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import BarChart from "@/common/components/BarChart.vue";
+import { BarChart } from "@/common/components";
 import { createData, createOptions } from "./PositionsChart.config";
 
 export default {

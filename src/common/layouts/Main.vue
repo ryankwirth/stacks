@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import Navigation from "@/common/components/Navigation.vue";
+import { Navigation } from "@/common/components";
 
 export default {
   components: {

@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import DoughnutChart from "@/common/components/DoughnutChart.vue";
+import { DoughnutChart } from "@/common/components";
 import { createData, createOptions } from "./AllocationChart.config";
 
 export default {
