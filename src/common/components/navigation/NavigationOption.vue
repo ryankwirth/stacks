@@ -1,6 +1,6 @@
 <template>
   <li class="navigation-option">
-    <a>{{ label }}</a>
+    <a v-on:click.prevent="onClick">{{ label }}</a>
   </li>
 </template>
 
@@ -8,6 +8,7 @@
 export default {
   props: {
     label: String,
+    onClick: Function,
   },
 };
 </script>

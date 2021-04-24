@@ -7,11 +7,11 @@
 <script>
 export default {
   props: {
-    open: Boolean,
+    isOpen: Boolean,
   },
   computed: {
     classes() {
-      const modifier = this.open ? "open" : "closed";
+      const modifier = this.isOpen ? "open" : "closed";
       return ["upload-modal", `upload-modal--${modifier}`];
     },
   },
@@ -21,8 +21,12 @@ export default {
 <style lang="scss">
 .upload-modal {
   position: absolute;
+  top: 0;
+  left: 0;
+
   width: 100%;
   height: 100%;
+
   background: rgba($color-neutral-900, 0.7);
 }
 

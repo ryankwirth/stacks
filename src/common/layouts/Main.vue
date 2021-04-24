@@ -2,7 +2,7 @@
   <div class="main">
     <div class="main__navigation">
       <div class="main__wrapper">
-        <Navigation />
+        <Navigation :onUploadButtonClicked="openUploadModal" />
       </div>
     </div>
     <div class="main__contents">
@@ -11,7 +11,7 @@
       </div>
     </div>
     <div class="main__modals">
-      <UploadModal :open="isUploadModalOpen" />
+      <UploadModal :is-open="isUploadModalOpen" />
     </div>
   </div>
 </template>
@@ -31,6 +31,7 @@ export default {
   },
   methods: {
     openUploadModal() {
+      console.log("openUploadModal");
       this.isUploadModalOpen = true;
     },
   },

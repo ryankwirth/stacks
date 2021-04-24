@@ -12,7 +12,7 @@
     </ul>
 
     <ul class="navigation__options">
-      <navigation-option label="Upload" />
+      <navigation-option label="Upload" :on-click="onUploadButtonClicked" />
     </ul>
   </nav>
 </template>
@@ -26,6 +26,9 @@ export default {
     NavigationLink,
     NavigationOption,
   },
+  props: {
+    onUploadButtonClicked: Function,
+  }
 };
 </script>
 
