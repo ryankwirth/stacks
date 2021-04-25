@@ -14,7 +14,7 @@ const actions = {
 
     // Subscribe to a new snapshot listener if the user is logged in
     const unsubscribe = user.uid
-      ? Firebase.firestore
+      ? Firebase.db
           .collection("profiles")
           .doc(user.uid)
           .onSnapshot((doc) => {
