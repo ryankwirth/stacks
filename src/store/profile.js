@@ -13,16 +13,12 @@ const actions = {
     state.unsubscribe();
 
     // Subscribe to a new snapshot listener if the user is logged in
-    console.log(Firebase.firestore);
-    console.log(user.uid);
     const unsubscribe = user.uid
       ? Firebase.firestore
           .collection("profiles")
           .doc(user.uid)
           .onSnapshot((doc) => {
-            console.log("onSnapshot");
-            console.log(doc);
-            console.log(doc.data());
+            commit("setProfile", doc.data());
           })
       : noop;
 
