@@ -1,5 +1,5 @@
 name = "stacks-worker"
-type = "javascript"
+type = "webpack"
 
 account_id = "780b72a62a8c9d9882ec32bca450ab6b"
 workers_dev = true
