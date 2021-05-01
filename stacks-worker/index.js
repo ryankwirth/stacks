@@ -8,15 +8,25 @@ addEventListener('fetch', event => {
  * @returns A Response object.
  */
 async function handleRequest(request) {
-  const { searchParams } = new URL(request.url);
+  const { origin, searchParams } = new URL(request.url);
   const instrumentId = searchParams.get('instrumentId');
-  return await fetchInstrumentData(instrumentId);
+
+  // Fetch instrument data from MSN
+  const blob = await fetchInstrumentData(instrumentId);
+
+  // Return the data and set the CORS header
+  return new Response(blob, {
+    headers: {
+      'Content-Type': blob.type,
+      'Access-Control-Allow-Origin': origin,
+    },
+  });
 }
 
 /**
  * Fetch data for the given instrument ID
  * @param {string} instrumentId The ID of the instrument to look up.
- * @returns A Response object.
+ * @returns A Blob object..
  */
 async function fetchInstrumentData(instrumentId) {
   const params = new URLSearchParams({
@@ -29,5 +39,6 @@ async function fetchInstrumentData(instrumentId) {
   const url = new URL('https://assets.msn.com/service/Finance/Charts');
   url.search = params.toString();
 
-  return await fetch(url);
+  const response = await fetch(url);
+  return await response.blob();
 }
