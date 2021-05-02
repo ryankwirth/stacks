@@ -1,29 +1,24 @@
 const actions = {
-  fetchInstrument({ commit, state }, payload) {
+  fetchInstrument({ commit, state }, id) {
     // If we already have data for this instrument, don't do anything
-    if (state.instruments[payload.symbol]) {
+    if (state.instruments[id]) {
       return;
     }
 
     // Fetch one years' worth of instrument data for the given ID
     fetch(
-      `https://stacks-worker.ryanwirth.workers.dev/api/v1/instrument/${payload.id}/1Y`
+      `https://stacks-worker.ryanwirth.workers.dev/api/v1/instrument/${id}/1Y`
     )
       .then((response) => response.json())
-      .then((json) =>
-        commit("setInstrument", {
-          data: json,
-          symbol: payload.symbol,
-        })
-      );
+      .then((json) => commit("setInstrument", json));
   },
 };
 
 const getters = {};
 
 const mutations = {
-  setInstrument(state, payload) {
-    state.instruments[payload.symbol] = payload.data;
+  setInstrument(state, json) {
+    state.instruments[json.instrumentId] = json;
   },
 };
 
