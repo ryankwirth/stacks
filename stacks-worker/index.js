@@ -29,8 +29,8 @@ async function handleInstrumentRequest(request) {
 
   return new Response(blob, {
     headers: {
-      'Content-Type': blob.type,
-      'Access-Control-Allow-Origin': origin,
+      'Content-Type': 'application/json',
+      'Access-Control-Allow-Origin': '*',
     },
   });
 }
