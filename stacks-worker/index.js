@@ -21,13 +21,18 @@ async function handleRequest(request) {
  * @returns A Response object.
  */
 async function handleInstrumentRequest(request) {
-  const { origin, pathname } = new URL(request.url);
+  const { pathname } = new URL(request.url);
   const instrumentId = /[^/]*$/.exec(pathname)[0];
 
   // Fetch instrument data from MSN
-  const blob = await fetchInstrumentData(instrumentId);
+  const json = await fetchInstrumentData(instrumentId);
 
-  return new Response(blob, {
+  // Prepare the response status code and body
+  const status = json.length > 0 ? 200 : 404;
+  const body = JSON.stringify(json[0] || {});
+
+  return new Response(body, {
+    status,
     headers: {
       'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': '*',
@@ -38,7 +43,7 @@ async function handleInstrumentRequest(request) {
 /**
  * Fetch data for the given instrument ID
  * @param {string} instrumentId The ID of the instrument to look up.
- * @returns A Blob object..
+ * @returns A JSON object.
  */
 async function fetchInstrumentData(instrumentId) {
   const params = new URLSearchParams({
@@ -52,5 +57,5 @@ async function fetchInstrumentData(instrumentId) {
   url.search = params.toString();
 
   const response = await fetch(url);
-  return await response.blob();
+  return await response.json();
 }
