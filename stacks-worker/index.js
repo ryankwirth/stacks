@@ -22,10 +22,14 @@ async function handleRequest(request) {
  */
 async function handleInstrumentRequest(request) {
   const { pathname } = new URL(request.url);
-  const instrumentId = /[^/]*$/.exec(pathname)[0];
+  const components = pathname.split('/');
+
+  // `/api/v1/instrument/${instrumentId}/${timeSpan}`
+  const instrumentId = components[4];
+  const timeSpan = components[5] || 'All';
 
   // Fetch instrument data from MSN
-  const json = await fetchInstrumentData(instrumentId);
+  const json = await fetchInstrumentData(instrumentId, timeSpan);
 
   // Prepare the response status code and body
   const status = json.length > 0 ? 200 : 404;
@@ -43,14 +47,15 @@ async function handleInstrumentRequest(request) {
 /**
  * Fetch data for the given instrument ID
  * @param {string} instrumentId The ID of the instrument to look up.
+ * @param {string} timeSpan The length of time to retrieve.
  * @returns A JSON object.
  */
-async function fetchInstrumentData(instrumentId) {
+async function fetchInstrumentData(instrumentId, timeSpan) {
   const params = new URLSearchParams({
     apikey: '0QfOX3Vn51YCzitbLaRkTTBadtWpgTN8NZLW0C1SEM',
-    ids: instrumentId,
     wrapodata: false,
-    type: 'All',
+    ids: instrumentId,
+    type: timeSpan,
   });
 
   const url = new URL('https://assets.msn.com/service/Finance/Charts');
