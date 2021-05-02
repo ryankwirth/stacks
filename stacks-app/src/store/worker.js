@@ -1,31 +1,35 @@
 const actions = {
   fetchInstruments({ dispatch }, instruments) {
-    instruments.forEach((instrument) =>
+    const promises = instruments.map((instrument) =>
       dispatch("fetchInstrument", instrument)
     );
+
+    // Instruct the dashboard to calculate time series
+    return Promise.all(promises).then(() =>
+      dispatch("dashboard/calculateSeries", instruments, { root: true })
+    );
   },
-  fetchInstrument({ dispatch, state }, instrument) {
+  fetchInstrument({ commit, state }, instrument) {
     // If we already have data for this instrument, don't do anything
     if (state.instruments[instrument.symbol]) {
-      return;
+      return Promise.resolve();
     }
 
     // Fetch one years' worth of instrument data for the given ID
-    fetch(
+    return fetch(
       `https://stacks-worker.ryanwirth.workers.dev/api/v1/instrument/${instrument.id}/1Y`
     )
       .then((response) => response.json())
-      .then((json) => dispatch("onInstrument", json));
-  },
-  onInstrument({ commit, dispatch }, json) {
-    commit("setInstrument", json);
-
-    // Instruct the dashboard to handle this instrument data
-    dispatch("dashboard/onInstrument", json, { root: true });
+      .then((json) => commit("setInstrument", json));
   },
 };
 
-const getters = {};
+const getters = {
+  getSeriesForSymbol(state) {
+    return (symbol) =>
+      state.instruments[symbol] ? state.instruments[symbol].series : {};
+  },
+};
 
 const mutations = {
   setInstrument(state, json) {

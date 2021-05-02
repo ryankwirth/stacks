@@ -32,9 +32,13 @@ const actions = {
 };
 
 const getters = {
-  getTransactionsBySymbol(state) {
+  getTransactionsForSymbol(state) {
     return (symbol) =>
-      state.transactions.filter((transaction) => transaction.symbol === symbol);
+      state.profile
+        ? state.profile.transactions.filter(
+            (transaction) => transaction.symbol === symbol
+          )
+        : [];
   },
 };
 
