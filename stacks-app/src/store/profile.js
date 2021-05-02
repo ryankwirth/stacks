@@ -3,7 +3,13 @@ import { Firebase } from "@/services";
 const noop = () => {};
 
 const actions = {
-  subscribe({ commit, state }, user) {
+  onSnapshot({ commit, dispatch }, profile) {
+    commit("setProfile", profile);
+
+    // Instruct the worker to fetch data for all of the instruments
+    dispatch("worker/fetchInstruments", profile.instruments, { root: true });
+  },
+  subscribe({ commit, dispatch, state }, user) {
     // If we're already subscribed to this user, don't do anything
     if (state.uid === user.uid) {
       return;
@@ -17,9 +23,7 @@ const actions = {
       ? Firebase.db
           .collection("profiles")
           .doc(user.uid)
-          .onSnapshot((doc) => {
-            commit("setProfile", doc.data());
-          })
+          .onSnapshot((doc) => dispatch("onSnapshot", doc.data()))
       : noop;
 
     commit("setUid", user.uid);
@@ -27,7 +31,12 @@ const actions = {
   },
 };
 
-const getters = {};
+const getters = {
+  getTransactionsBySymbol(state) {
+    return (symbol) =>
+      state.transactions.filter((transaction) => transaction.symbol === symbol);
+  },
+};
 
 const mutations = {
   setUid(state, uid) {

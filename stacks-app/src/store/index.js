@@ -3,6 +3,7 @@ import Vuex from "vuex";
 import createPersistedState from "vuex-persistedstate";
 
 import auth from "./auth";
+import dashboard from "./dashboard";
 import profile from "./profile";
 import worker from "./worker";
 
@@ -11,6 +12,7 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
   modules: {
     auth,
+    dashboard,
     profile,
     worker,
   },
