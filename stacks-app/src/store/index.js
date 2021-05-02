@@ -4,6 +4,7 @@ import createPersistedState from "vuex-persistedstate";
 
 import auth from "./auth";
 import profile from "./profile";
+import worker from "./worker";
 
 Vue.use(Vuex);
 
@@ -11,6 +12,7 @@ export const store = new Vuex.Store({
   modules: {
     auth,
     profile,
+    worker,
   },
   plugins: [
     createPersistedState({
